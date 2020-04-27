@@ -11,4 +11,4 @@ UPDATES!
 - V1 First release
 - V1.1 NOT STABLE SHOULD NOT BE USED
 - V2 Huge update, fixed various bugs
-- V2.1 Fixed security flaws
+- V2.1 Fixed security flaw
