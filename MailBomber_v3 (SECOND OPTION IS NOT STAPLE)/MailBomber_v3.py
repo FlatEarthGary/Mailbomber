@@ -35,8 +35,8 @@ class MainProgram:
         info = input("> ")
         info = info.lower()
         if info == "info":
-            second = second_method()
-            second.starting()
+            self.second = second_method()
+            self.second.Starting()
             sys.exit(1)
 
     def Main_Setup(self):
