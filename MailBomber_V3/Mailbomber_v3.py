@@ -331,6 +331,7 @@ class second_method(MainProgram):
             while True:
                 try:
                     self.amount = int(input("> "))
+                    break
                 except ValueError:
                     print("Please provide a nummber!")
                 except KeyboardInterrupt:
