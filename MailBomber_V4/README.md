@@ -1,4 +1,4 @@
-# Mail Bomber V.4 GUI UPDATE AND MORE!
+# Mail Bomber V.4.1 GUI UPDATE AND MORE!
 
 <p align='center'>
   <img src='https://github.com/FlatEarthGary/RELEASES/blob/master/MailBomber_V4/images/showoff.png'>
