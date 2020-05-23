@@ -1,7 +1,7 @@
 # Mail Bomber V.4 GUI UPDATE AND MORE!
 
 <p align='center'>
-  <img src='https://github.com/FlatEarthGary/RELEASES/blob/master/MailBomber_V4/showoff.png'>
+  <img src='https://github.com/FlatEarthGary/RELEASES/blob/master/MailBomber_V4/images/showoff.png'>
 </p>
 
 It's that time of the year again, a new update.
