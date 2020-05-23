@@ -4,6 +4,8 @@
   <img src='https://github.com/FlatEarthGary/RELEASES/blob/master/MailBomber_V4.1/images/showoff.png'>
 </p>
 
+# RUN SETUP.py FIRST!
+
 It's that time of the year again, a new update.
 This version provides:
 
