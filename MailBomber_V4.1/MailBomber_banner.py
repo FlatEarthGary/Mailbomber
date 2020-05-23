@@ -55,6 +55,3 @@ def Banner():
            `--..#####..--'                     """, end=""), time.sleep(0.1)
 
     return ""
-
-
-Banner()
