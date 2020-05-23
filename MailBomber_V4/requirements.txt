@@ -1,0 +1,6 @@
+smtplib
+getpass
+sys
+time
+colorama
+PySimpleGUI
