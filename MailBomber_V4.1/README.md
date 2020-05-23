@@ -1,7 +1,7 @@
 # Mail Bomber V.4.1 GUI UPDATE AND MORE!
 
 <p align='center'>
-  <img src='https://github.com/FlatEarthGary/RELEASES/blob/master/MailBomber_V4.1/images/showoff.png'>
+  <img src=''>
 </p>
 
 # RUN SETUP.py FIRST!
