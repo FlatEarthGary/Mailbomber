@@ -13,4 +13,6 @@ UPDATES!
 - V1.1 NOT STABLE SHOULD NOT BE USED
 - V2 Huge update, fixed various bugs
 - V2.1 Fixed security flaw
-
+- V3 Added support for larger amounts of mails
+- V4 Added GUI
+- V4.1 Overall improvments
