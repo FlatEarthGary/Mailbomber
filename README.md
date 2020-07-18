@@ -1,5 +1,5 @@
-# MY PUBLIC (and for the most part stable) RELEASES
-This is my public repo created for releases. All releases in this repo will be stable as long as nothing else is noted.
+# MY RELEASES
+This is my public repo created for project releases. All releases in this repo will work fine as long as nothing else is noted.
 
 <p align='center'>
   <img src='https://github.com/FlatEarthGary/RELEASES/blob/master/MailBomber_V4.1/images/pic.png'>
