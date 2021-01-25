@@ -1,4 +1,4 @@
-# MY RELEASES
+# MailBomber
 A mailbomber that can send massive amounts of mails to a desired mail adress. 
 
 <p align='center'>
