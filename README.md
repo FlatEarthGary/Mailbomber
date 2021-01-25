@@ -1,5 +1,5 @@
 # MY RELEASES
-This is my public repo created for project releases. All releases in this repo will work fine as long as nothing else is noted.
+A mailbomber that can send massive amounts of mails to a desired mail adress. 
 
 <p align='center'>
   <img src='https://github.com/FlatEarthGary/RELEASES/blob/master/MailBomber_V4.1/images/pic.png'>
@@ -14,7 +14,6 @@ Have a great day!
 
 UPDATES!
 - V1 First release
-- V1.1 NOT STABLE SHOULD NOT BE USED
 - V2 Huge update, fixed various bugs
 - V2.1 Fixed security flaw
 - V3 Added support for larger amounts of mails
